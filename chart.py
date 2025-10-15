@@ -1,4 +1,5 @@
-WHITE = "\033[48;5;15m" 
+RED = "\033[48;5;196m"
+GREEN = "\033[48;5;34m" 
 RESET = "\033[0m"
 
 
@@ -25,5 +26,5 @@ percent_more = more_minus5 / all * 100
 percent_less = less_minus5 / all * 100
 
 
-print(f"{percent_more}% | {(WHITE + " " + RESET)  * int(percent_more // 2)}")
-print(f"{percent_less}% | {(WHITE + " " + RESET) * int(percent_less // 2)}")
+print(f"{percent_more}% | {(RED + " " + RESET)  * int(percent_more // 2)}")
+print(f"{percent_less}% | {(GREEN + " " + RESET) * int(percent_less // 2)}")
