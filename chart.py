@@ -21,10 +21,10 @@ for num in numbers:
 
 all = more_minus5 + less_minus5
 
-
 percent_more = more_minus5 / all * 100
 percent_less = less_minus5 / all * 100
 
 
 print(f"{percent_more}% | {(RED + " " + RESET)  * int(percent_more // 2)}")
 print(f"{percent_less}% | {(GREEN + " " + RESET) * int(percent_less // 2)}")
+
