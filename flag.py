@@ -4,7 +4,7 @@ WHITE = f"{ESC}48;5;15m"
 RED = f"{ESC}48;5;160m"
 
 
-def draw_flag(width = 55, height = 15): 
+def draw_flag(width=55, height=15): 
     center_x = width // 2
     center_y = height // 2
     radius = 4
@@ -21,3 +21,4 @@ def draw_flag(width = 55, height = 15):
 
 if __name__ == "__main__":
     draw_flag()
+
