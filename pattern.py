@@ -3,12 +3,12 @@ WHITE= "\033[48;5;15m"
 
 
 def romb_mask(size):
-    n = 2 * size - 1
+    high_romb = 2 * size - 1
     center = size - 1
     mask = []
-    for y in range(n):
+    for y in range(high_romb):
         strok = []
-        for x in range(n):
+        for x in range(high_romb):
             if abs(x - center) + abs(y - center) == size - 1:
                 strok.append(1)
             else:
@@ -17,18 +17,18 @@ def romb_mask(size):
     return mask
 
 
-def karkas_line(mask_line, color_on, color_off = ""):
-    return "".join((color_on + " ") if contour == 1 else (color_off + " ") for contour in mask_line) + RESET
+def karkas_line(mask_line, color_off, color_on = ""):
+    return "".join((color_off + " ") if contour == 1 else (color_on + " ") for contour in mask_line) + RESET
 
 
 def draw_romb(size, cols, strok):
     mask = romb_mask(size)
     for i in range(strok):
         for mask_line in mask:
-            line = "".join(karkas_line(mask_line, WHITE, RESET) for i in range(cols))
+            line = "".join(karkas_line(mask_line, RESET, WHITE) for i in range(cols))
             print(line)
     print(RESET)
 
 
 if __name__ == "__main__":
-    draw_romb(size = 6, cols = 8, strok = 10)
+    draw_romb(size = 8, cols = 7, strok = 5)
