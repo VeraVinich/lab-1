@@ -45,4 +45,5 @@ def function_y_3x(height, width):
         print(line)
 
 if __name__ == "__main__":
-    function_y_3x(height = 13, width = 15)
+    function_y_3x(height=13, width=15)
+
