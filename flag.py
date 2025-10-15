@@ -8,7 +8,6 @@ def draw_flag(width = 55, height = 15):
     center_x = width // 2
     center_y = height // 2
     radius = 4
-
     for y in range(height):
         line_parts = []
         for x in range(width):
@@ -19,6 +18,6 @@ def draw_flag(width = 55, height = 15):
                 line_parts.append(WHITE)
         print(" ".join(line_parts) + RESET)
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     draw_flag()
