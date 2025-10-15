@@ -17,8 +17,14 @@ def romb_mask(size):
     return mask
 
 
-def karkas_line(mask_line, color_off, color_on = ""):
-    return "".join((color_off + " ") if contour == 1 else (color_on + " ") for contour in mask_line) + RESET
+def karkas_line(mask_line, color_off, color_on=""):
+    parts = []
+    for contour in mask_line:
+        if contour == 1:
+            parts.append(color_off + " ")
+        else:
+            parts.append(color_on + " ")
+    return "".join(parts) + RESET
 
 
 def draw_romb(size, cols, strok):
@@ -31,4 +37,5 @@ def draw_romb(size, cols, strok):
 
 
 if __name__ == "__main__":
-    draw_romb(size = 8, cols = 7, strok = 5)
+    draw_romb(size=8, cols=7, strok=5)
+
