@@ -1,20 +1,32 @@
 RED = "\033[48;5;196m" 
-RESET = "\033[0m"
+RESET = "\033[0m" 
 
 
-def plot_y_3x(height, width):
-    max_x = width - 1
+def function_y_3x(height, width):
+    max_x = width 
     max_y = 3 * max_x 
-
-    y_scale = max_y / (height - 1) if max_y > 0 else 1
+    y_scale = max_y // (height)
     grid = [[' ' for i in range(width)] for i in range(height)]
 
+    n = 1
+    k = 0
     for x in range(width):
-        grid[height - 1][x] = '─' 
+        if k % 3 == 0 and k != 0:
+            grid[height - 1][x] = str(n)
+            n += 1
+        else:
+            grid[height - 1][x] = '─' 
+        k += 1
+        
+    k = height - 1
     for y in range(height):
-        grid[y][0] = '│' 
-    grid[height - 1][0] = '└'   
-    grid[height - 1][x] += '>'
+        if k % 3 == 0 and k != 0:
+            grid[y][0] = str(k)
+        else:
+            grid[y][0] = '│' 
+        k -= 1 
+    grid[height - 1][x] = '>'
+    grid[0][0] = '^'
 
     for x in range(width):
         y = 3 * x
@@ -27,11 +39,10 @@ def plot_y_3x(height, width):
         for x in range(width):
             blank = grid[y][x]
             if blank == '*':
-                line += RED + " " + RESET 
+                line += RED + " " + RESET   
             else:
                 line += blank
         print(line)
 
-
 if __name__ == "__main__":
-    plot_y_3x(height = 20, width = 25)
+    function_y_3x(height = 13, width = 15)
